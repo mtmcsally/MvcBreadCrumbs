@@ -58,6 +58,16 @@ namespace MvcBreadCrumbs
         }
 
         /// <summary>
+        /// Remove the currently active URL from the BreadCrumb
+        /// </summary>
+        /// <returns></returns>
+        public static void RemoveCurrentBreadCrumb()
+        {
+            var state = StateManager.GetState(SessionProvider.SessionId);
+            state.RemoveCurrent();
+        }
+
+        /// <summary>
         /// Get the URL of the preceeding item from the BreadCrumb
         /// </summary>
         /// <returns>The URL of the preceeding item in the breadcrumb</returns>

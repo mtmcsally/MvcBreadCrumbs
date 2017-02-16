@@ -13,6 +13,11 @@ namespace MvcBreadCrumbs
         public List<StateEntry> Crumbs { get; set; }
         public StateEntry Current { get; set; }
 
+        public void RemoveCurrent()
+        {
+            Crumbs.Remove(Current);
+        }
+
         public void Push(ActionExecutingContext context, string label, Type resourceType )
         {
             var key =
